@@ -18,14 +18,18 @@ import {Component} from 'angular2/core';
 })
 
 export class Background {
-    pathToImages : string = "images/"
-    photoList : string[] = ["banner1.jpg", "banner2.jpg"];
+    pathToImages : string = "images/background/"
+    photoList : string[] = [];
     //photoList : string[] = ["sample.jpg"];
     photos : any[][] = [];
     numRows : number = 20;
     numCols : number = 8;
 
     constructor () {
+        //Set up photoList (hard-coded imgX.jpg, X = number)
+        for (let index = 1; index <= 10; index++) {
+            this.photoList.push(`img${index}.jpg`);
+        }
         //Set up "photos" to be loaded randomly based on files in directory
         for (let row = 0; row < this.numRows; row++) {
             this.photos.push([]);

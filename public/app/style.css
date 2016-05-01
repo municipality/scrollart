@@ -9,12 +9,13 @@ body {
     min-width : 1000px;
 }
 
-#background img{
+
+#background img {
     float :left;
     width : 100%;
     height : auto;
     /* Chrome, Safari, Opera */
-    -webkit-filter: blur(4px) grayscale(100%) opacity(50%);
+    -webkit-filter: blur(2px) grayscale(100%) opacity(50%);
     filter: blur(4px) grayscale(100%) opacity(50%);
 
 
@@ -23,12 +24,6 @@ body {
        -o-transition: all .5s ease;
       -ms-transition: all .5s ease;
           transition: all .5s ease;
-
-      /*-webkit-transition: all 1s ease;
-       -moz-transition: all 1s ease;
-         -o-transition: all 1s ease;
-        -ms-transition: all 1s ease;
-            transition: all 1s ease;*/
 }
 
 #background img:hover {
@@ -42,11 +37,7 @@ body {
        -o-transition: all .5s ease;
       -ms-transition: all .5s ease;
           transition: all .5s ease;
-      /*-webkit-transition: all 1s ease;
-       -moz-transition: all 1s ease;
-         -o-transition: all 1s ease;
-        -ms-transition: all 1s ease;
-            transition: all 1s ease;*/
+
 }
 
 /*End Background CSS*/
