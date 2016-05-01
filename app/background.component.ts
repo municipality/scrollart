@@ -19,8 +19,8 @@ import {Component} from 'angular2/core';
 
 export class Background {
     pathToImages : string = "images/"
-    //photoList : string[] = ["banner1.jpg", "banner2.jpg"];
-    photoList : string[] = ["sample.jpg"];
+    photoList : string[] = ["banner1.jpg", "banner2.jpg"];
+    //photoList : string[] = ["sample.jpg"];
     photos : any[][] = [];
     numRows : number = 20;
     numCols : number = 8;
