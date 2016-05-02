@@ -1,15 +1,15 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {Component} from 'angular2/core';
 import {Background} from './background.component';
-import {Page} from './page.component';
+import {Wall} from './wall.component';
 
 @Component ({
     selector : 'app',
-    directives : [Background, Page],
+    directives : [Background, Wall],
     template : `
             <button id="toggle-wall-button" type="button" (click)="toggleWall()">Hide the Wall</button>
             <background></background>
-            <page></page>
+            <wall></wall>
     `
 })
 
@@ -34,7 +34,7 @@ class App {
             wall.style.visibility = "visible";
             //Fix the position of wall
             wall.style.position = "relative";
-            
+
             toggleButton.innerHTML = "Hide the Wall";
             this.isWallVisible = true;
         }

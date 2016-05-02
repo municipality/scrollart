@@ -4,7 +4,7 @@ import {ContactFooter} from './contact.footer';
 import {Banner} from './banner.component';
 
 @Component ({
-    selector : 'page',
+    selector : 'wall',
     directives : [Square, ContactFooter, Banner],
     template : `
         <div id="wall">
@@ -23,7 +23,7 @@ import {Banner} from './banner.component';
 
     `
 })
-export class Page {
+export class Wall {
     //used to build the squares
     numColumns : number = 3;
     builder : any[][] = [];

@@ -24,7 +24,8 @@ export class Background {
     //photoList : string[] = ["sample.jpg"];
     photos : any[][] = [];
     numRows : number = 10;
-    numCols : number = 7;
+    numCols : number = 8;
+    numBackgroundImages : number = 34;
 
     imageClick (image) {
         return false;
@@ -32,7 +33,7 @@ export class Background {
 
     constructor () {
         //Set up photoList (hard-coded imgX.jpg, X = number)
-        for (let index = 1; index <= 31; index++) {
+        for (let index = 1; index <= this.numBackgroundImages; index++) {
             this.photoList.push(`img${index}.jpg`);
             this.photoListBase.push(`img${index}.jpg`);
         }

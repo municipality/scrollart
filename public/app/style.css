@@ -19,6 +19,7 @@ p {
     z-index : 10000;
     background-color : rgba(180, 225, 240, 1);
     padding: none;
+    border : none;
     color: rgb(255, 255, 255);
     font-size : 16pt;
     height : auto;
@@ -44,7 +45,7 @@ p {
     height : auto;
     /* Chrome, Safari, Opera */
     -webkit-filter: blur(2px) grayscale(100%) opacity(50%);
-    filter: blur(4px) grayscale(100%) opacity(50%);
+    filter: blur(2px) grayscale(100%) opacity(50%);
 
 
     -webkit-transition: all .5s ease;
@@ -70,18 +71,19 @@ p {
 
 /*End Background CSS*/
 
-/*Page CSS*/
+/*Wall CSS*/
 
 #banner-container {
     position :relative;
-    width : 90%;
+    width : 95%;
     height : 400px;
     margin: 0 auto 0 auto;
 }
 
 .banner-image {
-    height : auto;
+    min-width : 100%;
     max-width : 100%;
+    height : 100%;
     position : absolute;
     left : 0;
     opacity : 0;
@@ -138,7 +140,7 @@ p {
     text-align : center;
 }
 
-/*End Page CSS*/
+/*End Wall CSS*/
 
 /*Contact Footer CSS*/
 #contact-footer {
