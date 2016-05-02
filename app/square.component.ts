@@ -18,6 +18,6 @@ export class Square {
     @Input() src:string;
 
     constructor () {
-        
+
     }
 }

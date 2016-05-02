@@ -3,8 +3,26 @@ body {
     margin : 0 0 0 0;
 }
 
+#toggle-wall-button {
+    float : left;
+    position : fixed;
+    z-index : 10000;
+    background-color : rgba(180, 225, 240, 1);
+    padding: none;
+    color: rgb(255, 255, 255);
+    font-size : 16pt;
+    height : auto;
+    width : auto;
+    -webkit-filter: opacity(50%);
+    filter: opacity(50%);
+}
+
+#toggle-wall-button:hover {
+    -webkit-filter: none;
+    filter: none;
+}
+
 #background {
-    top : -50px;
     position : fixed;
     min-width : 1000px;
 }
@@ -46,6 +64,7 @@ body {
 p {
     font-family : "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: white;
+    min-height : 25px;
     /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
 }
 #wall {
@@ -64,9 +83,13 @@ p {
     width : 100%;
 }
 
+#square-table td {
+    vertical-align : top;
+}
+
 .square {
     z-index : 1;
-    background-color : rgba(180, 225, 240, .7);
+    background-color : rgba(50, 50, 240, .4);
     margin : 20px 10px 20px 10px;
     width : 100%
     min-width: 100px;

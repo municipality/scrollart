@@ -8,7 +8,7 @@ import {Component} from 'angular2/core';
         <div id='background'>
             <tr *ngFor="#row of photos">
                 <td *ngFor="#item of row">
-                    <a href="#">
+                    <a href="#" (click)="imageClick(image)">
                         <img #image id='background-{{item.id}}' class="background-images" src='{{pathToImages}}{{item.src}}'>
                     </a>
                 </td>
@@ -18,26 +18,38 @@ import {Component} from 'angular2/core';
 })
 
 export class Background {
-    pathToImages : string = "images/background/"
+    pathToImages : string = "images/background/";
+    photoListBase : string[] = [];
     photoList : string[] = [];
     //photoList : string[] = ["sample.jpg"];
     photos : any[][] = [];
-    numRows : number = 20;
-    numCols : number = 8;
+    numRows : number = 10;
+    numCols : number = 7;
+
+    imageClick (image) {
+        return false;
+    }
 
     constructor () {
         //Set up photoList (hard-coded imgX.jpg, X = number)
-        for (let index = 1; index <= 10; index++) {
+        for (let index = 1; index <= 31; index++) {
             this.photoList.push(`img${index}.jpg`);
+            this.photoListBase.push(`img${index}.jpg`);
         }
         //Set up "photos" to be loaded randomly based on files in directory
         for (let row = 0; row < this.numRows; row++) {
             this.photos.push([]);
             for (let col = 0; col < this.numCols; col++) {
+                let rand = Math.floor(Math.random()*(this.photoList.length));
                 this.photos[row].push({
-                    src : this.photoList[Math.floor(Math.random()*(this.photoList.length))],
+                    src : this.photoList[rand],
                     id :  "" + row + col
                 });
+                this.photoList.splice(rand, 1);
+                //If photolist is empty, start repeating images
+                if (this.photoList.length == 0) {
+                    this.photoList = this.photoListBase.slice(0);
+                }
             }
         }
 
