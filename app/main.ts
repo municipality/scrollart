@@ -34,6 +34,7 @@ class App {
             //background.style.position = "relative";
 
             toggleButton.innerHTML = "Show the Wall";
+            toggleButton.style.opacity = ".5";
             this.isWallVisible = false;
         } else {
             //Work-around for banner delay
@@ -45,6 +46,7 @@ class App {
             //background.style.position = "fixed";
 
             toggleButton.innerHTML = "Hide the Wall";
+            toggleButton.style.opacity = "1";
             this.isWallVisible = true;
         }
 

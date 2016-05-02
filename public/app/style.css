@@ -24,13 +24,10 @@ p {
     font-size : 16pt;
     height : auto;
     width : auto;
-    -webkit-filter: opacity(50%);
-    filter: opacity(50%);
 }
 
 #toggle-wall-button:hover {
-    -webkit-filter: none;
-    filter: none;
+    opacity : 1;
 }
 
 #background {

@@ -12,7 +12,9 @@ import {Banner} from './banner.component';
             <table id="square-table">
                 <tr *ngFor="#row of builder">
                     <td *ngFor="#square of row">
-                        <square [title]="square.title" [description]="square.description" [src]="square.src"></square>
+                        <square [title]="square.title" [description]="square.description" [src]="square.src"
+                                [descriptionLink]="square.descriptionLink" [descriptionLinkURL]="square.descriptionLinkURL">
+                        </square>
                     </td>
                 </tr>
             </table>
@@ -99,6 +101,13 @@ export class Wall {
             title : `Jokester`,
             src : `jokester.jpg`,
             description : `Creator of bad jokes and puns with a side of horrendously loud laughter`
+        },
+        {
+            title : `Hard Thinker`,
+            src : `thinker.jpg`,
+            description : `Get to know my technical side!`,
+            descriptionLink : `Check out my resume here`,
+            descriptionLinkURL : `LeeBrian_Resume.pdf`
         }
     ];
 
