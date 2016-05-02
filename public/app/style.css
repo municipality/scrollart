@@ -1,8 +1,18 @@
-/*Background CSS*/
 body {
     margin : 0 0 0 0;
 }
 
+p {
+    font-family : "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: white;
+    min-height : 25px;
+    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+}
+
+
+
+
+/*Background CSS*/
 #toggle-wall-button {
     float : left;
     position : fixed;
@@ -61,12 +71,28 @@ body {
 /*End Background CSS*/
 
 /*Page CSS*/
-p {
-    font-family : "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    color: white;
-    min-height : 25px;
-    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+
+#banner-container {
+    position :relative;
+    width : 90%;
+    height : 400px;
+    margin: 0 auto 0 auto;
 }
+
+.banner-image {
+    height : auto;
+    max-width : 100%;
+    position : absolute;
+    left : 0;
+    opacity : 0;
+
+    -webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+       -o-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+          transition: all .5s ease;
+}
+
 #wall {
     position : relative;
     width : 60%;
@@ -74,10 +100,11 @@ p {
     background-color : rgba(255, 255, 255, 0.7);
     left : 50%;
     transform : translate(-50%, 0);
-    min-width : 500px;
+    min-width : 800px;
 }
 
 #square-table {
+    position : relative;
     max-width: 100%;
     table-layout: fixed;
     width : 100%;
@@ -112,3 +139,33 @@ p {
 }
 
 /*End Page CSS*/
+
+/*Contact Footer CSS*/
+#contact-footer {
+    background-color : rgba(50, 50, 50, .7);
+}
+
+#contact-footer .section-header {
+    font-family : "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: white;
+    font-size : 16pt;
+}
+
+#contact-footer p {
+    margin : 0px 0px 0px 5px;
+}
+
+#contact-footer .icon::before {
+    margin : 4px;
+}
+
+#contact-footer .email-icon::before{
+    content: url('../images/icons/email-icon.png');
+}
+
+#copyright {
+    position : absolute;
+    bottom : 0;
+    right : 5px;
+}
+/*End Contact Footer CSS*/

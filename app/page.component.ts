@@ -1,11 +1,14 @@
 import {Component} from 'angular2/core';
 import {Square} from './square.component';
+import {ContactFooter} from './contact.footer';
+import {Banner} from './banner.component';
 
 @Component ({
     selector : 'page',
-    directives : [Square],
+    directives : [Square, ContactFooter, Banner],
     template : `
         <div id="wall">
+            <banner></banner>
             <table id="square-table">
                 <tr *ngFor="#row of builder">
                     <td *ngFor="#square of row">
@@ -14,7 +17,7 @@ import {Square} from './square.component';
                 </tr>
             </table>
             <div>
-
+            <contact></contact>
         </div>
 
 
@@ -75,7 +78,7 @@ export class Page {
         {
             title : `Dessert Connoisseur`,
             src : `dessert.jpg`,
-            description : `Expert in tasting different types of desserts`
+            description : `Expert in dessert tasting`
         },
         {
             title : `Hiker`,
@@ -85,12 +88,12 @@ export class Page {
         {
             title : `Dancer`,
             src : `dancer.jpg`,
-            description : `Amateur dancer, but expert with good company and a couple beers`
+            description : `Amateur dancer, but expert with good company and a couple of beers`
         },
         {
             title : `World Explorer`,
             src : `explorer.jpg`,
-            description : `Lover of new environments and exotic foods`
+            description : `Lover of the ocean, new environments, and exotic foods`
         },
         {
             title : `Jokester`,
