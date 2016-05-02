@@ -22,18 +22,27 @@ class App {
     toggleWall () {
         //Hide/show wall
         let wall = document.getElementById("wall");
+        let background = document.getElementById("background");
         let toggleButton = document.getElementById("toggle-wall-button");
         if (this.isWallVisible) {
-            wall.style.visibility = "hidden";
+            //Work-around for banner delay
+            wall.style.opacity = "0";
+            wall.style["z-index"] = "-1";
+
             //Prevent scrolling when hidden
             wall.style.position = "fixed";
+            //background.style.position = "relative";
 
             toggleButton.innerHTML = "Show the Wall";
             this.isWallVisible = false;
         } else {
-            wall.style.visibility = "visible";
+            //Work-around for banner delay
+            wall.style.opacity = "1";
+            wall.style["z-index"] = "1";
+
             //Fix the position of wall
             wall.style.position = "relative";
+            //background.style.position = "fixed";
 
             toggleButton.innerHTML = "Hide the Wall";
             this.isWallVisible = true;

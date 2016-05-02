@@ -57,7 +57,7 @@ export class Wall {
         },
         {
             title : `Weight Lifter`,
-            src : `sample.jpg`,
+            src : `lifter.jpg`,
             description : `Active weight-lifter for six years`
         },
         {
