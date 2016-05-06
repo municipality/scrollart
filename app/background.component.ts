@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {BackgroundService} from './background.service';
 
 @Component({
     selector : 'background',
@@ -9,7 +10,7 @@ import {Component} from 'angular2/core';
             <tr *ngFor="#row of photos">
                 <td *ngFor="#item of row">
                     <a href="#" (click)="imageClick(image)">
-                        <img #image id='background-{{item.id}}' class="background-images" src='{{pathToImages}}{{item.src}}'>
+                        <img #image id='background-{{item.id}}' class="background-images" src='{{item.src}}'>
                     </a>
                 </td>
             </tr>
@@ -18,43 +19,14 @@ import {Component} from 'angular2/core';
 })
 
 export class Background {
-    pathToImages : string = "images/background/";
-    photoListBase : string[] = [];
-    photoList : string[] = [];
-    //photoList : string[] = ["sample.jpg"];
     photos : any[][] = [];
-    numRows : number = 10;
-    numCols : number = 8;
-    numBackgroundImages : number = 34;
 
     imageClick (image) {
         return false;
     }
 
-    constructor () {
-        //Set up photoList (hard-coded imgX.jpg, X = number)
-        for (let index = 1; index <= this.numBackgroundImages; index++) {
-            this.photoList.push(`img${index}.jpg`);
-            this.photoListBase.push(`img${index}.jpg`);
-        }
-        //Set up "photos" to be loaded randomly based on files in directory
-        for (let row = 0; row < this.numRows; row++) {
-            this.photos.push([]);
-            for (let col = 0; col < this.numCols; col++) {
-                let rand = Math.floor(Math.random()*(this.photoList.length));
-                this.photos[row].push({
-                    src : this.photoList[rand],
-                    id :  "" + row + col
-                });
-                this.photoList.splice(rand, 1);
-                //If photolist is empty, start repeating images
-                if (this.photoList.length == 0) {
-                    this.photoList = this.photoListBase.slice(0);
-                }
-            }
-        }
-
-
+    constructor (private backgroundService : BackgroundService) {
+        this.photos = backgroundService.getPhotos();
     }
 
 }

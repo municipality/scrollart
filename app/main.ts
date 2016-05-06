@@ -1,7 +1,12 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {Component} from 'angular2/core';
+import {Component, Injectable} from 'angular2/core';
 import {Background} from './background.component';
+import {BackgroundService} from './background.service';
 import {Wall} from './wall.component';
+import {WallService} from './wall.service';
+import {BannerService} from './banner.service';
+
+
 
 @Component ({
     selector : 'app',
@@ -9,48 +14,26 @@ import {Wall} from './wall.component';
     template : `
             <button id="toggle-wall-button" type="button" (click)="toggleWall()">Hide the Wall</button>
             <background></background>
-            <wall></wall>
+            <div *ngIf="showWall">
+                <wall></wall>
+            </div>
+
     `
 })
 
 class App {
     isWallVisible : boolean = true;
     constructor () {
-
     }
 
-    toggleWall () {
-        //Hide/show wall
-        let wall = document.getElementById("wall");
-        let background = document.getElementById("background");
-        let toggleButton = document.getElementById("toggle-wall-button");
-        if (this.isWallVisible) {
-            //Work-around for banner delay
-            wall.style.opacity = "0";
-            wall.style["z-index"] = "-1";
-
-            //Prevent scrolling when hidden
-            wall.style.position = "fixed";
-            //background.style.position = "relative";
-
-            toggleButton.innerHTML = "Show the Wall";
-            toggleButton.style.opacity = ".5";
-            this.isWallVisible = false;
-        } else {
-            //Work-around for banner delay
-            wall.style.opacity = "1";
-            wall.style["z-index"] = "1";
-
-            //Fix the position of wall
-            wall.style.position = "relative";
-            //background.style.position = "fixed";
-
-            toggleButton.innerHTML = "Hide the Wall";
-            toggleButton.style.opacity = "1";
-            this.isWallVisible = true;
-        }
-
+    showWall : boolean = true;
+    toggleWall() {
+        this.showWall = !this.showWall;
     }
+
+
 }
 
-bootstrap(App);
+
+
+bootstrap(App, [BackgroundService, WallService, BannerService]);
