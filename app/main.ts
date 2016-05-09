@@ -23,10 +23,11 @@ import {BannerService} from './banner.service';
 
 class App {
     isWallVisible : boolean = true;
+    showWall : boolean = true;
+
     constructor () {
     }
 
-    showWall : boolean = true;
     toggleWall() {
         this.showWall = !this.showWall;
     }
@@ -36,4 +37,4 @@ class App {
 
 
 
-bootstrap(App, [BackgroundService, WallService, BannerService]);
+bootstrap(App);

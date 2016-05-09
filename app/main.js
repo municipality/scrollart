@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/core', './background.component', './background.service', './wall.component', './wall.service', './banner.service'], function(exports_1, context_1) {
+System.register(['angular2/platform/browser', 'angular2/core', './background.component', './wall.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/platform/browser', 'angular2/core', './background.com
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, core_1, background_component_1, background_service_1, wall_component_1, wall_service_1, banner_service_1;
+    var browser_1, core_1, background_component_1, wall_component_1;
     var App;
     return {
         setters:[
@@ -23,17 +23,8 @@ System.register(['angular2/platform/browser', 'angular2/core', './background.com
             function (background_component_1_1) {
                 background_component_1 = background_component_1_1;
             },
-            function (background_service_1_1) {
-                background_service_1 = background_service_1_1;
-            },
             function (wall_component_1_1) {
                 wall_component_1 = wall_component_1_1;
-            },
-            function (wall_service_1_1) {
-                wall_service_1 = wall_service_1_1;
-            },
-            function (banner_service_1_1) {
-                banner_service_1 = banner_service_1_1;
             }],
         execute: function() {
             App = (function () {
@@ -54,8 +45,8 @@ System.register(['angular2/platform/browser', 'angular2/core', './background.com
                 ], App);
                 return App;
             }());
-            browser_1.bootstrap(App, [background_service_1.BackgroundService, wall_service_1.WallService, banner_service_1.BannerService]);
+            browser_1.bootstrap(App);
         }
     }
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUF1QkE7Z0JBRUk7b0JBREEsa0JBQWEsR0FBYSxJQUFJLENBQUM7b0JBSS9CLGFBQVEsR0FBYSxJQUFJLENBQUM7Z0JBRjFCLENBQUM7Z0JBR0Qsd0JBQVUsR0FBVjtvQkFDSSxJQUFJLENBQUMsUUFBUSxHQUFHLENBQUMsSUFBSSxDQUFDLFFBQVEsQ0FBQztnQkFDbkMsQ0FBQztnQkFyQkw7b0JBQUMsZ0JBQVMsQ0FBRTt3QkFDUixRQUFRLEVBQUcsS0FBSzt3QkFDaEIsVUFBVSxFQUFHLENBQUMsaUNBQVUsRUFBRSxxQkFBSSxDQUFDO3dCQUMvQixRQUFRLEVBQUcseVBBT1Y7cUJBQ0osQ0FBQzs7dUJBQUE7Z0JBYUYsVUFBQztZQUFELENBQUMsQUFYRCxJQVdDO1lBSUQsbUJBQVMsQ0FBQyxHQUFHLEVBQUUsQ0FBQyxzQ0FBaUIsRUFBRSwwQkFBVyxFQUFFLDhCQUFhLENBQUMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtib290c3RyYXB9IGZyb20gJ2FuZ3VsYXIyL3BsYXRmb3JtL2Jyb3dzZXInO1xuaW1wb3J0IHtDb21wb25lbnQsIEluamVjdGFibGV9IGZyb20gJ2FuZ3VsYXIyL2NvcmUnO1xuaW1wb3J0IHtCYWNrZ3JvdW5kfSBmcm9tICcuL2JhY2tncm91bmQuY29tcG9uZW50JztcbmltcG9ydCB7QmFja2dyb3VuZFNlcnZpY2V9IGZyb20gJy4vYmFja2dyb3VuZC5zZXJ2aWNlJztcbmltcG9ydCB7V2FsbH0gZnJvbSAnLi93YWxsLmNvbXBvbmVudCc7XG5pbXBvcnQge1dhbGxTZXJ2aWNlfSBmcm9tICcuL3dhbGwuc2VydmljZSc7XG5pbXBvcnQge0Jhbm5lclNlcnZpY2V9IGZyb20gJy4vYmFubmVyLnNlcnZpY2UnO1xuXG5cblxuQENvbXBvbmVudCAoe1xuICAgIHNlbGVjdG9yIDogJ2FwcCcsXG4gICAgZGlyZWN0aXZlcyA6IFtCYWNrZ3JvdW5kLCBXYWxsXSxcbiAgICB0ZW1wbGF0ZSA6IGBcbiAgICAgICAgICAgIDxidXR0b24gaWQ9XCJ0b2dnbGUtd2FsbC1idXR0b25cIiB0eXBlPVwiYnV0dG9uXCIgKGNsaWNrKT1cInRvZ2dsZVdhbGwoKVwiPkhpZGUgdGhlIFdhbGw8L2J1dHRvbj5cbiAgICAgICAgICAgIDxiYWNrZ3JvdW5kPjwvYmFja2dyb3VuZD5cbiAgICAgICAgICAgIDxkaXYgKm5nSWY9XCJzaG93V2FsbFwiPlxuICAgICAgICAgICAgICAgIDx3YWxsPjwvd2FsbD5cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgYFxufSlcblxuY2xhc3MgQXBwIHtcbiAgICBpc1dhbGxWaXNpYmxlIDogYm9vbGVhbiA9IHRydWU7XG4gICAgY29uc3RydWN0b3IgKCkge1xuICAgIH1cblxuICAgIHNob3dXYWxsIDogYm9vbGVhbiA9IHRydWU7XG4gICAgdG9nZ2xlV2FsbCgpIHtcbiAgICAgICAgdGhpcy5zaG93V2FsbCA9ICF0aGlzLnNob3dXYWxsO1xuICAgIH1cblxuXG59XG5cblxuXG5ib290c3RyYXAoQXBwLCBbQmFja2dyb3VuZFNlcnZpY2UsIFdhbGxTZXJ2aWNlLCBCYW5uZXJTZXJ2aWNlXSk7XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUF1QkE7Z0JBSUk7b0JBSEEsa0JBQWEsR0FBYSxJQUFJLENBQUM7b0JBQy9CLGFBQVEsR0FBYSxJQUFJLENBQUM7Z0JBRzFCLENBQUM7Z0JBRUQsd0JBQVUsR0FBVjtvQkFDSSxJQUFJLENBQUMsUUFBUSxHQUFHLENBQUMsSUFBSSxDQUFDLFFBQVEsQ0FBQztnQkFDbkMsQ0FBQztnQkF0Qkw7b0JBQUMsZ0JBQVMsQ0FBRTt3QkFDUixRQUFRLEVBQUcsS0FBSzt3QkFDaEIsVUFBVSxFQUFHLENBQUMsaUNBQVUsRUFBRSxxQkFBSSxDQUFDO3dCQUMvQixRQUFRLEVBQUcseVBBT1Y7cUJBQ0osQ0FBQzs7dUJBQUE7Z0JBY0YsVUFBQztZQUFELENBQUMsQUFaRCxJQVlDO1lBSUQsbUJBQVMsQ0FBQyxHQUFHLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Ym9vdHN0cmFwfSBmcm9tICdhbmd1bGFyMi9wbGF0Zm9ybS9icm93c2VyJztcbmltcG9ydCB7Q29tcG9uZW50LCBJbmplY3RhYmxlfSBmcm9tICdhbmd1bGFyMi9jb3JlJztcbmltcG9ydCB7QmFja2dyb3VuZH0gZnJvbSAnLi9iYWNrZ3JvdW5kLmNvbXBvbmVudCc7XG5pbXBvcnQge0JhY2tncm91bmRTZXJ2aWNlfSBmcm9tICcuL2JhY2tncm91bmQuc2VydmljZSc7XG5pbXBvcnQge1dhbGx9IGZyb20gJy4vd2FsbC5jb21wb25lbnQnO1xuaW1wb3J0IHtXYWxsU2VydmljZX0gZnJvbSAnLi93YWxsLnNlcnZpY2UnO1xuaW1wb3J0IHtCYW5uZXJTZXJ2aWNlfSBmcm9tICcuL2Jhbm5lci5zZXJ2aWNlJztcblxuXG5cbkBDb21wb25lbnQgKHtcbiAgICBzZWxlY3RvciA6ICdhcHAnLFxuICAgIGRpcmVjdGl2ZXMgOiBbQmFja2dyb3VuZCwgV2FsbF0sXG4gICAgdGVtcGxhdGUgOiBgXG4gICAgICAgICAgICA8YnV0dG9uIGlkPVwidG9nZ2xlLXdhbGwtYnV0dG9uXCIgdHlwZT1cImJ1dHRvblwiIChjbGljayk9XCJ0b2dnbGVXYWxsKClcIj5IaWRlIHRoZSBXYWxsPC9idXR0b24+XG4gICAgICAgICAgICA8YmFja2dyb3VuZD48L2JhY2tncm91bmQ+XG4gICAgICAgICAgICA8ZGl2ICpuZ0lmPVwic2hvd1dhbGxcIj5cbiAgICAgICAgICAgICAgICA8d2FsbD48L3dhbGw+XG4gICAgICAgICAgICA8L2Rpdj5cblxuICAgIGBcbn0pXG5cbmNsYXNzIEFwcCB7XG4gICAgaXNXYWxsVmlzaWJsZSA6IGJvb2xlYW4gPSB0cnVlO1xuICAgIHNob3dXYWxsIDogYm9vbGVhbiA9IHRydWU7XG5cbiAgICBjb25zdHJ1Y3RvciAoKSB7XG4gICAgfVxuXG4gICAgdG9nZ2xlV2FsbCgpIHtcbiAgICAgICAgdGhpcy5zaG93V2FsbCA9ICF0aGlzLnNob3dXYWxsO1xuICAgIH1cblxuXG59XG5cblxuXG5ib290c3RyYXAoQXBwKTtcbiJdfQ==

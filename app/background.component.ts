@@ -3,6 +3,7 @@ import {BackgroundService} from './background.service';
 
 @Component({
     selector : 'background',
+    providers : [BackgroundService],
     //template for row by column image generation
     //#image lets you access "this" in the "loaded" function
     template : `

@@ -1,8 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {BannerService} from './banner.service';
 
 @Component ({
     selector : 'banner',
+    providers : [BannerService],
     template : `
         <div id='banner-container'>
             <div *ngFor="#imageSrc of bannerList">
@@ -12,7 +13,7 @@ import {BannerService} from './banner.service';
     `
 })
 
-export class Banner {
+export class Banner implements OnInit {
     bannerList : string[] = [];
     //used to see when all images loaded
     counter : number = 0;
@@ -22,7 +23,6 @@ export class Banner {
     changeInterval : number = 5000;
 
     constructor (private bannerService : BannerService) {
-        this.bannerList = bannerService.getBannerImages();
     }
 
     loaded (image) {
@@ -56,5 +56,9 @@ export class Banner {
             setInterval(innerRep, this.changeInterval);
         };
         repeat();
+    }
+
+    ngOnInit () {
+        this.bannerList = this.bannerService.getBannerImages();
     }
 }
