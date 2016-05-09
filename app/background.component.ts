@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {BackgroundService} from './background.service';
 
 @Component({
@@ -18,15 +18,20 @@ import {BackgroundService} from './background.service';
     `
 })
 
-export class Background {
+export class Background implements OnInit{
     photos : any[][] = [];
 
     imageClick (image) {
         return false;
     }
 
+    //Do not put complex logic inside constructor (aka calling a service)
     constructor (private backgroundService : BackgroundService) {
-        this.photos = backgroundService.getPhotos();
+
+    }
+
+    ngOnInit () {
+        this.photos = this.backgroundService.getPhotos();
     }
 
 }
