@@ -9,6 +9,10 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+var compress = require('compression');
+
+app.use(compress());  
 // expose node_modules to client app
 app.use(express.static("./node_modules/"));
 app.use(express.static("./app/"));
