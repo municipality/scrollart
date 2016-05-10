@@ -14,9 +14,9 @@ var compress = require('compression');
 
 app.use(compress());
 // expose node_modules to client app
-app.use(express.static("./node_modules/", { maxAge: '7d', etag: false} ));
+app.use(express.static("./node_modules/", { maxage: '7d', } ));
 app.use(express.static("./app/"));
-app.use(express.static(__dirname + '/public/', { maxAge: '7d', etag: false }));
+app.use(express.static(__dirname + '/public/', { maxage: '7d' }));
 
 
 
@@ -59,13 +59,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.use(function (req, res, next) {
-  if (req.url.indexOf("/images/") === 0 || req.url.indexOf("/app/") === 0) {
-    res.setHeader("Cache-Control", "public, max-age=2592000");
-    res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
-  }
-  next();
-});
 
 
 module.exports = app;
