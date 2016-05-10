@@ -16,8 +16,7 @@ app.use(compress());
 // expose node_modules to client app
 app.use(express.static("./node_modules/", { maxAge: '7d'} ));
 app.use(express.static("./app/"));
-app.use(express.static(__dirname + '/public/images/', { maxAge: '7d' }));
-app.use(express.static(__dirname + '/public/app/', { maxAge: '7d' }));
+app.use(express.static(__dirname + '/public/', { maxAge: '7d' }));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
