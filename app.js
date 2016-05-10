@@ -12,11 +12,12 @@ var app = express();
 
 var compress = require('compression');
 
-app.use(compress());  
+app.use(compress());
 // expose node_modules to client app
-app.use(express.static("./node_modules/"));
+app.use(express.static("./node_modules/", { maxAge: '7d'} ));
 app.use(express.static("./app/"));
-
+app.use(express.static(__dirname + '/public/images/', { maxAge: '7d' }));
+app.use(express.static(__dirname + '/public/app/', { maxAge: '7d' }));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -25,8 +26,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -57,6 +56,14 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
+});
+
+app.use(function (req, res, next) {
+  if (req.url.indexOf("/images/") === 0 || req.url.indexOf("/app/") === 0) {
+    res.setHeader("Cache-Control", "public, max-age=2592000");
+    res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
+  }
+  next();
 });
 
 
