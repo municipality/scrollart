@@ -1,3 +1,3 @@
-#Photo Wall
+#Angular2 Template
 
-Display photos in animated wall (in progress)
+Angular2 with Node and Express
