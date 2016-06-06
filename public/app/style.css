@@ -1,0 +1,63 @@
+body {
+    min-width: 1000px;
+}
+
+/*tetris component*/
+tetris {
+    display: block;
+    position: fixed;
+    top: 40px;
+    min-width: 800px;
+    width: 95%;
+    height: 100%;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.tetris-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.tetris-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.tetris-bottom {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
+
+
+/*loading mask*/
+.loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 25px;
+    height: 25px;
+    -webkit-animation: spin 2s ease-in-out infinite;
+    animation: spin 2s ease-in-out infinite;
+}
+
+.loading-tag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

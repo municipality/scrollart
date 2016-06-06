@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/platform/browser', 'angular2/core', './tetris.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/platform/browser', 'angular2/core'], function(exports
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, core_1;
+    var browser_1, core_1, tetris_component_1;
     var App;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/platform/browser', 'angular2/core'], function(exports
             },
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (tetris_component_1_1) {
+                tetris_component_1 = tetris_component_1_1;
             }],
         execute: function() {
             App = (function () {
@@ -27,7 +30,8 @@ System.register(['angular2/platform/browser', 'angular2/core'], function(exports
                 App = __decorate([
                     core_1.Component({
                         selector: 'app',
-                        template: "\n\n    "
+                        directives: [tetris_component_1.Tetris],
+                        template: "\n        <tetris></tetris>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], App);
@@ -37,4 +41,4 @@ System.register(['angular2/platform/browser', 'angular2/core'], function(exports
         }
     }
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFZQTtnQkFFSTtnQkFDQSxDQUFDO2dCQVZMO29CQUFDLGdCQUFTLENBQUU7d0JBQ1IsUUFBUSxFQUFHLEtBQUs7d0JBQ2hCLFFBQVEsRUFBRyxVQUVWO3FCQUNKLENBQUM7O3VCQUFBO2dCQU9GLFVBQUM7WUFBRCxDQUFDLEFBTEQsSUFLQztZQUlELG1CQUFTLENBQUMsR0FBRyxDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge2Jvb3RzdHJhcH0gZnJvbSAnYW5ndWxhcjIvcGxhdGZvcm0vYnJvd3Nlcic7XG5pbXBvcnQge0NvbXBvbmVudCwgSW5qZWN0YWJsZX0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XG5cblxuXG5AQ29tcG9uZW50ICh7XG4gICAgc2VsZWN0b3IgOiAnYXBwJyxcbiAgICB0ZW1wbGF0ZSA6IGBcblxuICAgIGBcbn0pXG5cbmNsYXNzIEFwcCB7XG5cbiAgICBjb25zdHJ1Y3RvciAoKSB7XG4gICAgfVxuXG59XG5cblxuXG5ib290c3RyYXAoQXBwKTtcbiJdfQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFhQTtnQkFFSTtnQkFFQSxDQUFDO2dCQVpMO29CQUFDLGdCQUFTLENBQUU7d0JBQ1IsUUFBUSxFQUFHLEtBQUs7d0JBQ2hCLFVBQVUsRUFBRyxDQUFDLHlCQUFNLENBQUM7d0JBQ3JCLFFBQVEsRUFBRyxtQ0FFVjtxQkFDSixDQUFDOzt1QkFBQTtnQkFRRixVQUFDO1lBQUQsQ0FBQyxBQU5ELElBTUM7WUFJRCxtQkFBUyxDQUFDLEdBQUcsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtib290c3RyYXB9IGZyb20gJ2FuZ3VsYXIyL3BsYXRmb3JtL2Jyb3dzZXInO1xuaW1wb3J0IHtDb21wb25lbnQsIEluamVjdGFibGV9IGZyb20gJ2FuZ3VsYXIyL2NvcmUnO1xuXG5pbXBvcnQge1RldHJpc30gZnJvbSAnLi90ZXRyaXMuY29tcG9uZW50JztcblxuQENvbXBvbmVudCAoe1xuICAgIHNlbGVjdG9yIDogJ2FwcCcsXG4gICAgZGlyZWN0aXZlcyA6IFtUZXRyaXNdLFxuICAgIHRlbXBsYXRlIDogYFxuICAgICAgICA8dGV0cmlzPjwvdGV0cmlzPlxuICAgIGBcbn0pXG5cbmNsYXNzIEFwcCB7XG5cbiAgICBjb25zdHJ1Y3RvciAoKSB7XG4gICAgICAgIFxuICAgIH1cblxufVxuXG5cblxuYm9vdHN0cmFwKEFwcCk7XG4iXX0=
