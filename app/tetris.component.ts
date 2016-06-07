@@ -35,6 +35,14 @@ export class Tetris {
         this.container.style.height = height + "px";
         this.tetris = document.getElementsByTagName("tetris")[0];
         var handler = (e) => {
+
+            if(this.mobileService.isMobile()) {
+                height = window.outerHeight;
+            }
+            else {
+                height = window.innerHeight;
+            }
+            this.container.style.height = height + "px";
             var rect = this.tetris.getBoundingClientRect();
 
             if(rect.top > 0) {
