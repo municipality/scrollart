@@ -1,33 +1,51 @@
 body {
     min-width: 1000px;
     margin: 0;
+    background-color: rgb( 254, 0, 26);
+}
+app {
+    display: block;
+    position: relative;
+}
+.app-width {
+    width: 800px;
+}
+
+#banner {
+    position: relative;
+    display: block;
+    left:0;
+    right: 0;
+    margin: auto;
 }
 
 /*tetris component*/
 tetris {
     display: block;
     position: relative;
-    min-width: 1000px;
-    width: 100%;
+    width: 800px;
     height: 3000px;
     overflow: hidden;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .tetris-container {
     position: relative;
-    width: 100%;
+    width: 800px;
     height: 100%;
 }
 .tetris-top {
     position: absolute;
-    width: 100%;
+    width: 800px;
     z-index: 2;
 }
 
 .tetris-bottom {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 800px;
 }
 
 

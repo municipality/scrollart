@@ -7,6 +7,7 @@ import {Tetris} from './tetris.component';
     selector : 'app',
     directives : [Tetris],
     template : `
+        <img id="banner" class="app-width" src="images/banner.png">
         <tetris></tetris>
     `
 })
@@ -14,7 +15,7 @@ import {Tetris} from './tetris.component';
 class App {
 
     constructor () {
-        
+
     }
 
 }

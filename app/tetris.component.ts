@@ -5,7 +5,7 @@ import {Component} from 'angular2/core';
     template: `
         <div class="tetris-container">
 
-            <img #b class="tetris-bottom" (load)="handleBottom(b)" src="images/tetris-bottom-small.jpg">
+            <img #b class="tetris-bottom" (load)="handleBottom(b)" src="images/tetris-bottom-big.jpg">
         </div>
         <img #t class="tetris-top" (load)="handleTop(t)" src="images/tetris-top.png">
     `
@@ -28,39 +28,36 @@ export class Tetris {
         this.container = document.getElementsByClassName("tetris-container")[0];
         this.container.style.height = window.innerHeight + "px";
         this.tetris = document.getElementsByTagName("tetris")[0];
-
-        document.addEventListener("scroll", (e) => {
+        var handler = (e) => {
             var rect = this.tetris.getBoundingClientRect();
-            console.log(rect);
             if(rect.top > 0) {
                 this.container.style.position = "absolute";
                 this.container.style.top = "0";
+                this.container.style.bottom = "";
 
                 t.style.position = "absolute";
                 t.style.bottom = this.tetris.offsetHeight;
-                t.style.bottom = "";
             }
             else if (rect.bottom <= window.innerHeight) {
                 this.container.style.position = "absolute";
                 this.container.style.bottom = "0";
-
+                this.container.style.top = "";
                 t.style.position = "absolute";
                 t.style.bottom = 0;
                 t.style.top = "";
             }
             else {
                 this.container.style.position = "fixed";
+                this.container.style.bottom = "0";
 
                 t.style.position = "fixed";
-                console.log(this.tetris.x);
-                t.style.bottom = window.innerHeight * ((this.tetris.offsetHeight - ( window.pageYOffset))/(this.tetris.offsetHeight - t.offsetHeight));
+                t.style.bottom = window.innerHeight * ((rect.bottom - window.innerHeight)/(rect.bottom - rect.top- window.innerHeight));
             }
 
+        }
+        document.addEventListener("scroll", handler);
 
-        });
-
-        window.addEventListener("resize", (e) => {
-        });
+        window.addEventListener("resize", handler);
     }
 
     handleBottom (b) {
