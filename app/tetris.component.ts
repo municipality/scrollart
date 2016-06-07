@@ -24,7 +24,7 @@ export class Tetris {
         var me = this;
         var start = 0;
         var height;
-        if(window.isMobile) {
+        if(isMobile) {
             height = window.outerHeight;
         }
         else {
