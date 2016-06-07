@@ -1,18 +1,16 @@
 body {
     min-width: 1000px;
+    margin: 0;
 }
 
 /*tetris component*/
 tetris {
     display: block;
-    position: fixed;
-    top: 40px;
-    min-width: 800px;
-    width: 95%;
-    height: 100%;
+    position: relative;
+    min-width: 1000px;
+    width: 100%;
+    height: 3000px;
     overflow: hidden;
-    left: 50%;
-    transform: translate(-50%, 0);
 }
 
 .tetris-container {
@@ -22,14 +20,13 @@ tetris {
 }
 .tetris-top {
     position: absolute;
-    top: 0;
     width: 100%;
     z-index: 2;
 }
 
 .tetris-bottom {
     position: absolute;
-    bottom: 40px;
+    bottom: 0;
     width: 100%;
 }
 
