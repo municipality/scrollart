@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/core', './tetris.component'], function(exports_1, context_1) {
+System.register(['angular2/platform/browser', 'angular2/core', './tetris.component', './mobile.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/platform/browser', 'angular2/core', './tetris.compone
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var browser_1, core_1, tetris_component_1;
+    var browser_1, core_1, tetris_component_1, mobile_service_1;
     var App;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/platform/browser', 'angular2/core', './tetris.compone
             },
             function (tetris_component_1_1) {
                 tetris_component_1 = tetris_component_1_1;
+            },
+            function (mobile_service_1_1) {
+                mobile_service_1 = mobile_service_1_1;
             }],
         execute: function() {
             App = (function () {
@@ -37,8 +40,8 @@ System.register(['angular2/platform/browser', 'angular2/core', './tetris.compone
                 ], App);
                 return App;
             }());
-            browser_1.bootstrap(App);
+            browser_1.bootstrap(App, [mobile_service_1.MobileService]);
         }
     }
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFjQTtnQkFFSTtnQkFFQSxDQUFDO2dCQWJMO29CQUFDLGdCQUFTLENBQUU7d0JBQ1IsUUFBUSxFQUFHLEtBQUs7d0JBQ2hCLFVBQVUsRUFBRyxDQUFDLHlCQUFNLENBQUM7d0JBQ3JCLFFBQVEsRUFBRyw4R0FHVjtxQkFDSixDQUFDOzt1QkFBQTtnQkFRRixVQUFDO1lBQUQsQ0FBQyxBQU5ELElBTUM7WUFJRCxtQkFBUyxDQUFDLEdBQUcsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtib290c3RyYXB9IGZyb20gJ2FuZ3VsYXIyL3BsYXRmb3JtL2Jyb3dzZXInO1xyXG5pbXBvcnQge0NvbXBvbmVudCwgSW5qZWN0YWJsZX0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XHJcblxyXG5pbXBvcnQge1RldHJpc30gZnJvbSAnLi90ZXRyaXMuY29tcG9uZW50JztcclxuXHJcbkBDb21wb25lbnQgKHtcclxuICAgIHNlbGVjdG9yIDogJ2FwcCcsXHJcbiAgICBkaXJlY3RpdmVzIDogW1RldHJpc10sXHJcbiAgICB0ZW1wbGF0ZSA6IGBcclxuICAgICAgICA8aW1nIGlkPVwiYmFubmVyXCIgY2xhc3M9XCJhcHAtd2lkdGhcIiBzcmM9XCJpbWFnZXMvYmFubmVyLnBuZ1wiPlxyXG4gICAgICAgIDx0ZXRyaXM+PC90ZXRyaXM+XHJcbiAgICBgXHJcbn0pXHJcblxyXG5jbGFzcyBBcHAge1xyXG5cclxuICAgIGNvbnN0cnVjdG9yICgpIHtcclxuXHJcbiAgICB9XHJcblxyXG59XHJcblxyXG5cclxuXHJcbmJvb3RzdHJhcChBcHApO1xyXG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1haW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFjQTtnQkFFSTtnQkFFQSxDQUFDO2dCQWJMO29CQUFDLGdCQUFTLENBQUU7d0JBQ1IsUUFBUSxFQUFHLEtBQUs7d0JBQ2hCLFVBQVUsRUFBRyxDQUFDLHlCQUFNLENBQUM7d0JBQ3JCLFFBQVEsRUFBRyw4R0FHVjtxQkFDSixDQUFDOzt1QkFBQTtnQkFRRixVQUFDO1lBQUQsQ0FBQyxBQU5ELElBTUM7WUFJRCxtQkFBUyxDQUFDLEdBQUcsRUFBRSxDQUFDLDhCQUFhLENBQUMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtib290c3RyYXB9IGZyb20gJ2FuZ3VsYXIyL3BsYXRmb3JtL2Jyb3dzZXInO1xyXG5pbXBvcnQge0NvbXBvbmVudCwgSW5qZWN0YWJsZX0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XHJcblxyXG5pbXBvcnQge1RldHJpc30gZnJvbSAnLi90ZXRyaXMuY29tcG9uZW50JztcclxuaW1wb3J0IHtNb2JpbGVTZXJ2aWNlfSBmcm9tICcuL21vYmlsZS5zZXJ2aWNlJztcclxuQENvbXBvbmVudCAoe1xyXG4gICAgc2VsZWN0b3IgOiAnYXBwJyxcclxuICAgIGRpcmVjdGl2ZXMgOiBbVGV0cmlzXSxcclxuICAgIHRlbXBsYXRlIDogYFxyXG4gICAgICAgIDxpbWcgaWQ9XCJiYW5uZXJcIiBjbGFzcz1cImFwcC13aWR0aFwiIHNyYz1cImltYWdlcy9iYW5uZXIucG5nXCI+XHJcbiAgICAgICAgPHRldHJpcz48L3RldHJpcz5cclxuICAgIGBcclxufSlcclxuXHJcbmNsYXNzIEFwcCB7XHJcblxyXG4gICAgY29uc3RydWN0b3IgKCkge1xyXG5cclxuICAgIH1cclxuXHJcbn1cclxuXHJcblxyXG5cclxuYm9vdHN0cmFwKEFwcCwgW01vYmlsZVNlcnZpY2VdKTtcclxuIl19

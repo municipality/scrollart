@@ -2,7 +2,7 @@ import {bootstrap} from 'angular2/platform/browser';
 import {Component, Injectable} from 'angular2/core';
 
 import {Tetris} from './tetris.component';
-
+import {MobileService} from './mobile.service';
 @Component ({
     selector : 'app',
     directives : [Tetris],
@@ -22,4 +22,4 @@ class App {
 
 
 
-bootstrap(App);
+bootstrap(App, [MobileService]);

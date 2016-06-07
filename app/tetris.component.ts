@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 
+import {MobileService} from './mobile.service';
 @Component ({
     selector: 'tetris',
     template: `
@@ -15,7 +16,7 @@ export class Tetris {
     b : any;
     container;
     tetris;
-    constructor () {
+    constructor (private mobileService : MobileService) {
 
     }
 
@@ -24,7 +25,7 @@ export class Tetris {
         var me = this;
         var start = 0;
         var height;
-        if(isMobile) {
+        if(this.mobileService.isMobile()) {
             height = window.outerHeight;
         }
         else {
