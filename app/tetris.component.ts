@@ -3,11 +3,11 @@ import {Component} from 'angular2/core';
 @Component ({
     selector: 'tetris',
     template: `
-        <div class="tetris-container">
+        <div class="tetris-container app-width">
 
-            <img #b class="tetris-bottom" (load)="handleBottom(b)" src="images/tetris-bottom-big.jpg">
+            <img #b class="tetris-bottom app-width" (load)="handleBottom(b)" src="images/tetris-bottom-big.jpg">
         </div>
-        <img #t class="tetris-top" (load)="handleTop(t)" src="images/tetris-top.png">
+        <img #t class="tetris-top app-width" (load)="handleTop(t)" src="images/tetris-top.png">
     `
 })
 export class Tetris {
@@ -23,13 +23,19 @@ export class Tetris {
         this.t = t;
         var me = this;
         var start = 0;
-
-
+        var height;
+        if(window.isMobile) {
+            height = window.outerHeight;
+        }
+        else {
+            height = window.innerHeight;
+        }
         this.container = document.getElementsByClassName("tetris-container")[0];
-        this.container.style.height = window.innerHeight + "px";
+        this.container.style.height = height + "px";
         this.tetris = document.getElementsByTagName("tetris")[0];
         var handler = (e) => {
             var rect = this.tetris.getBoundingClientRect();
+
             if(rect.top > 0) {
                 this.container.style.position = "absolute";
                 this.container.style.top = "0";
@@ -38,7 +44,7 @@ export class Tetris {
                 t.style.position = "absolute";
                 t.style.bottom = this.tetris.offsetHeight;
             }
-            else if (rect.bottom <= window.innerHeight) {
+            else if (rect.bottom <= height) {
                 this.container.style.position = "absolute";
                 this.container.style.bottom = "0";
                 this.container.style.top = "";
@@ -49,9 +55,10 @@ export class Tetris {
             else {
                 this.container.style.position = "fixed";
                 this.container.style.bottom = "0";
+                this.container.style.top = "";
 
                 t.style.position = "fixed";
-                t.style.bottom = window.innerHeight * ((rect.bottom - window.innerHeight)/(rect.bottom - rect.top- window.innerHeight));
+                t.style.bottom = height * ((rect.bottom - height)/(rect.bottom - rect.top- height));
             }
 
         }
