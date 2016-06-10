@@ -52,6 +52,110 @@ tetris {
 }
 
 
+.outro-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.outro-image {
+    position: absolute;
+    -webkit-transition: opacity .5s linear; /* For Safari 3.1 to 6.0 */
+    transition: opacity .5s linear;
+    width: 2500px;
+}
+
+.outro-image.moon {
+    left: 50%;
+    -webkit-transform: translate(-50%, 0); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(-50%, 0); /* IE 9 */
+        transform: translate(-50%, 0); /* IE 10, Fx 16+, Op 12.1+ */
+    z-index: 1;
+    width: 30%;
+    height: auto;
+    bottom: 0;
+}
+
+.outro-panel {
+    width: 100%;
+    /*height: 550px;*/
+    min-height: 700px;
+    /*background-color: red;*/
+    position: relative;
+}
+
+intro .outro-intro {
+    float: left;
+    width: 200px;
+    height: 100%;
+    /*background-color: blue;*/
+
+}
+
+intro .outro-inner-panel {
+    /*background-color: rgba(255, 255, 255, .7);*/
+}
+
+intro .outro-inner-panel > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 15em;
+    margin: auto;
+    height: 15em;
+}
+
+intro .outro-inner-panel.right > div {
+    right: 25%;
+}
+
+intro .outro-inner-panel.left > div {
+    left: 25%;
+}
+
+intro .outro-inner-panel.center > div {
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+.outro-inner-panel > div h2 {
+    font-weight: 100;
+    color: white;
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.outro-inner-panel > div p {
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.outro-inner-panel.left h2 {
+    text-align: left;
+}
+
+.outro-inner-panel.left p {
+    text-align: left;
+}
+
+.outro-inner-panel.right h2 {
+    text-align: right;
+}
+
+.outro-inner-panel.right p {
+    text-align: right;
+}
+
+.outro-inner-panel.center h2 {
+    text-align: center;
+}
+
+.outro-inner-panel.center p {
+    text-align: center;
+}
+
+
 /*loading mask*/
 .loader {
     border: 4px solid #f3f3f3;
